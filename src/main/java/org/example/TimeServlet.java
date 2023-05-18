@@ -61,12 +61,9 @@ public class TimeServlet extends HttpServlet {
                 for (Cookie cookie : cookies) {
                     if (cookie.getName().equals("lastTimeZone")) {
                         timezone = cookie.getValue();
-//                    if (timezone.contains(" ")){
-//                        timezone = timezone.replace(" ","+");
-//                    }
+
                         ZoneId zone = ZoneId.of(timezone);
                         currentTime = LocalDateTime.now(zone);
-//                    break;
                     }
                 }
             }
